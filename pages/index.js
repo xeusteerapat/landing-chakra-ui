@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Text } from '@chakra-ui/react';
 
 const MenuItems = ({ children }) => {
   return (
-    <Text mt={{ base: 4, md: 0 }} mr={6} display='block' fontSize='2xl'>
+    <Text mt={{ base: 4, md: 0 }} mr={6} display='block' fontSize='lg'>
       {children}
     </Text>
   );
@@ -26,7 +26,7 @@ export default function Home(props) {
     >
       {/* menu item list */}
       <Flex align='center' mr={6}>
-        <Heading as='h1' size='lg'>
+        <Heading as='h1' size='md'>
           Achilles TP
         </Heading>
       </Flex>
@@ -54,6 +54,14 @@ export default function Home(props) {
         <MenuItems>Blog</MenuItems>
         <MenuItems>About</MenuItems>
         <MenuItems>Contact</MenuItems>
+      </Box>
+      <Box
+        display={{ sm: showMenu ? 'block' : 'none', md: 'block' }}
+        mt={{ base: 4, md: 0 }}
+      >
+        <Button bg='transparent' border='1px'>
+          Create account
+        </Button>
       </Box>
     </Flex>
   );
